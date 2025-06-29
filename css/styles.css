@@ -1,0 +1,228 @@
+
+body {
+  margin: 0;
+  font-family: 'Copperplate', 'DM Serif Display', serif;
+  background: #fff;
+  color: #000;
+  scroll-behavior: smooth;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 5vw;
+  box-sizing: border-box;
+}
+
+.hero {
+  background: url('../assets/hero.jpg') no-repeat center center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4rem;
+  border-radius: 1rem;
+  color: #fff;
+  animation: fadeInDown 2s ease forwards;
+}
+
+.logo {
+  font-size: 4rem;
+  letter-spacing: 3px;
+}
+
+.tagline {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.about-section {
+  flex-direction: row;
+  gap: 4rem;
+  animation: fadeInUp 2s ease forwards;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.services-focus {
+  flex-direction: column;
+  text-align: center;
+  background: #f7f7f7;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  animation: fadeIn 2s ease-in;
+}
+
+.services-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  margin-bottom: 2rem;
+}
+
+.services-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.services-content ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.services-content li {
+  margin: 0.5rem 0;
+}
+
+.contact-final {
+  background: url('../assets/music-microphone.jpg') no-repeat center center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.contact-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5rem;
+  border-radius: 1rem;
+  animation: fadeIn 2s ease-in;
+}
+
+.contact-overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-overlay h2 {
+  font-size: 2.2rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* Subtle zoom-in on load for all images */
+img {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: transform, opacity;
+}
+
+img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Additional hover effect */
+img:hover {
+  transform: scale(1.02);
+  transition: transform 0.4s ease;
+}
+
+
+/* === Mobile Responsiveness === */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .overlay,
+  .contact-overlay {
+    padding: 2rem;
+  }
+
+  .about-section {
+    flex-direction: column;
+    padding: 6vh 5vw;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-text {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .services-focus {
+    padding: 5vh 5vw;
+  }
+
+  .services-image img {
+    max-width: 100%;
+  }
+
+  .services-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .services-content ul {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .contact-overlay p {
+    font-size: 1.2rem;
+  }
+
+  .contact-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-item {
+    font-size: 0.95rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
