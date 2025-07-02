@@ -3,52 +3,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black Rabdi</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="js/scripts.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <section class="hero">
-    <div class="overlay">
-      <h1 class="logo">Black Rabdi</h1>
-      <p class="tagline">Make your stories stand out<br>in good taste.</p>
+<body class="bg-black text-white font-sans">
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-6 text-white">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+      <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <img src="assets/images/about.jpg" alt="About Image" class="w-[180%] md:w-[150%] transform scale-110 object-cover shadow-xl rounded-xl transition-all duration-500">
+      </div>
+      <div class="w-full md:w-1/2 md:pl-12">
+        <h2 class="text-4xl font-bold mb-4">About</h2>
+        <p class="text-lg leading-relaxed">
+          Over 12 years of experience building and marketing some of the most exciting products and brand stories on the planet.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="about-section">
-    <div class="about-image">
-      <img src="assets/about.jpg" alt="About Black Rabdi" />
-    </div>
-    <div class="about-text">
-      <h2>about</h2>
-      <p>Over 12 years of experience building and marketing some of the most exciting products and brand stories on the planet.</p>
+  <!-- Services Section -->
+  <section id="services" class="py-16 px-6 text-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="service-item opacity-0 transform translate-y-6 transition-all duration-700" data-animate>
+          <h3 class="text-xl font-semibold">Writing</h3>
+        </div>
+        <div class="service-item opacity-0 transform translate-y-6 transition-all duration-700" data-animate>
+          <h3 class="text-xl font-semibold">Creative Direction</h3>
+        </div>
+        <div class="service-item opacity-0 transform translate-y-6 transition-all duration-700" data-animate>
+          <h3 class="text-xl font-semibold">Marketing</h3>
+        </div>
+        <div class="service-item opacity-0 transform translate-y-6 transition-all duration-700" data-animate>
+          <h3 class="text-xl font-semibold">Brand Strategy</h3>
+        </div>
+        <div class="service-item opacity-0 transform translate-y-6 transition-all duration-700" data-animate>
+          <h3 class="text-xl font-semibold">Production</h3>
+        </div>
+        <div class="service-item opacity-0 transform translate-y-6 transition-all duration-700" data-animate>
+          <h3 class="text-xl font-semibold">Social Media</h3>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="services-focus">
-    <div class="services-image">
-      <img src="assets/QmTdL5.jpg" alt="Woman with headphones" />
-    </div>
-    <div class="services-content">
-      <h2>Services Offered</h2>
-      <ul>
-        <li>Writing</li>
-        <li>Creative Direction</li>
-        <li>Marketing</li>
-        <li>Brand Strategy</li>
-        <li>Production</li>
-        <li>Social Media</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Scroll Animation Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-6');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.1 });
 
-  <section class="contact-final">
-    <div class="contact-overlay">
-      <p>Let’s collaborate</p>
-      <h2>sach@blackrabdi.com</h2>
-    </div>
-  </section>
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
 </body>
 </html>
